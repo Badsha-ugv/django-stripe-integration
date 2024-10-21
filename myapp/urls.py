@@ -1,10 +1,9 @@
-# subscriptions/urls.py
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("subscribe/", views.subscription_view, name="subscribe"),
-    path("payment/<int:subscription_id>/", views.payment_view, name="payment"),
-    path("payment-success/", views.payment_success_view, name="payment_success"),
-    path('checkout-session/',views.create_checkout_session,name="checkout_session"),
+    path('', views.package_list, name='package_list'),
+    path('subscribe/<int:package_id>/', views.subscribe, name='subscribe'),
+    path('payment-success/', views.payment_success, name='payment_success'),
+    path('secret-page/', views.secret_page, name='secret_page'),
 ]

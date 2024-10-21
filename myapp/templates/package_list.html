@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; }
+        .container { display: flex; justify-content: space-around; }
+        .card { background-color: #fff; padding: 20px; border-radius: 8px; width: 30%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+        h2 { font-size: 24px; margin-bottom: 10px; }
+        p { font-size: 16px; }
+        button { background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <h1>Subscription Packages</h1>
+    <div class="container">
+        {% for package in packages %}
+        <div class="card">
+            <h2>{{ package.title }}</h2>
+            <p>{{ package.description }}</p>
+            <p>{{package.ammount}}</p>
+            <p>Duration: {{ package.duration }} days</p>
+            <a href="{% url 'subscribe' package.id %}"><button>Subscribe</button></a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
