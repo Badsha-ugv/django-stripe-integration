@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- templates/subscriptions/subscription_form.html -->
+<h2>Subscription Form</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Proceed to Payment</button>
+</form>
+
+
+{% endblock %}
