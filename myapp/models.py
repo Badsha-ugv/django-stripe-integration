@@ -17,7 +17,7 @@ class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     package = models.ForeignKey(Package, on_delete=models.CASCADE)
     start_date = models.DateField(default=timezone.now)
-
+    end_date = models.DateTimeField(blank=True, null=True)
     @property
     def end_date(self):
         return self.start_date + timedelta(days=self.package.duration)

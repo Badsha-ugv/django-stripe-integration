@@ -6,4 +6,5 @@ urlpatterns = [
     path('subscribe/<int:package_id>/', views.subscribe, name='subscribe'),
     path('payment-success/', views.payment_success, name='payment_success'),
     path('secret-page/', views.secret_page, name='secret_page'),
+    path('webhook/', views.stripe_webhook), 
 ]
